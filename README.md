@@ -115,7 +115,6 @@ Kaggle dataset                       : 44,898 rows
 
 
 Mendeley total                       : 76,537 rows
-(https://data.mendeley.com/datasets/945z9xkc8d/1)
   ISOT Fake News Dataset             : 45,386 rows
   Fake News Dataset                  : 20,681 rows
   Fake or Real News Dataset          : 6,332 rows
@@ -135,7 +134,7 @@ Real news  (label=1)    : 58,494
 
 ---
 
-*University of East London — BSc Computer Science Dissertation Project*
+*University of East London — BSc(Hons) Computer Science*
 
 **Copyrights**
 © Muhammad Junaid Mir
