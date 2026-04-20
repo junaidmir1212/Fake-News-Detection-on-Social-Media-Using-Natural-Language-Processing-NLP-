@@ -1,0 +1,11 @@
+# Large model and data files — too heavy for GitHub
+model/
+data/
+
+# Python cache files
+__pycache__/
+*.pyc
+*.pyo
+
+# VS Code settings
+.vscode/
