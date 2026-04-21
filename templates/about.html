@@ -37,7 +37,7 @@
     content: '';
     position: fixed;
     inset: 0;
-     background-image: url('/image/Background.png');
+    background-image: url('/image/Background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -49,346 +49,159 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 100%);
     pointer-events: none;
     z-index: 0;
   }
 
-  .blob {
-    position: fixed;
-    border-radius: 50%;
-    filter: blur(120px);
-    pointer-events: none;
-    z-index: 0;
-    opacity: 0.25;
-    animation: drift 18s ease-in-out infinite alternate;
-  }
+  .blob { position: fixed; border-radius: 50%; filter: blur(120px); pointer-events: none; z-index: 0; opacity: 0.25; animation: drift 18s ease-in-out infinite alternate; }
   .blob-1 { width: 500px; height: 500px; background: #6c63ff; top: -150px; right: -150px; }
   .blob-2 { width: 350px; height: 350px; background: #06b6d4; bottom: -100px; left: -100px; animation-delay: -8s; }
-  @keyframes drift {
-    0%   { transform: translate(0,0) scale(1); }
-    100% { transform: translate(30px,20px) scale(1.06); }
-  }
+  @keyframes drift { 0% { transform: translate(0,0) scale(1); } 100% { transform: translate(30px,20px) scale(1.06); } }
 
-  /* ── Navbar ── */
   .navbar {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    background: rgba(8,9,13,0.85);
-    backdrop-filter: blur(16px);
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: rgba(8,9,13,0.85); backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid rgba(255,255,255,0.06);
-    padding: 0 32px;
-    height: 60px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+    padding: 0 32px; height: 60px; display: flex; align-items: center; justify-content: space-between;
   }
   .nav-brand {
-    font-size: 1.1rem;
-    font-weight: 800;
+    font-size: 1.1rem; font-weight: 800;
     background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    letter-spacing: -0.02em;
-    text-decoration: none;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    letter-spacing: -0.02em; text-decoration: none;
   }
   .nav-links { display: flex; gap: 8px; }
-  .nav-link {
-    font-size: 13px;
-    font-weight: 500;
-    color: var(--muted);
-    text-decoration: none;
-    padding: 6px 14px;
-    border-radius: 8px;
-    transition: color 0.2s, background 0.2s;
-  }
+  .nav-link { font-size: 13px; font-weight: 500; color: var(--muted); text-decoration: none; padding: 6px 14px; border-radius: 8px; transition: color 0.2s, background 0.2s; }
   .nav-link:hover  { color: var(--text); background: rgba(255,255,255,0.06); }
   .nav-link.active { color: #a5b4fc; background: rgba(108,99,255,0.12); }
 
-  /* ── Layout ── */
-  .wrapper {
-    position: relative;
-    z-index: 1;
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 100px 24px 100px;
-  }
+  .wrapper { position: relative; z-index: 1; max-width: 900px; margin: 0 auto; padding: 100px 24px 100px; }
 
-  /* ── Page title ── */
-  .page-title {
-    text-align: center;
-    margin-bottom: 64px;
-  }
+  .page-title { text-align: center; margin-bottom: 64px; }
   .page-badge {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    background: rgba(108,99,255,0.12);
-    border: 1px solid rgba(108,99,255,0.3);
-    border-radius: 100px;
-    padding: 6px 16px;
-    font-size: 12px;
-    font-weight: 600;
-    color: #a5b4fc;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    margin-bottom: 20px;
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(108,99,255,0.12); border: 1px solid rgba(108,99,255,0.3);
+    border-radius: 100px; padding: 6px 16px; font-size: 12px; font-weight: 600;
+    color: #a5b4fc; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 20px;
   }
-  .page-badge::before {
-    content: '';
-    width: 7px; height: 7px;
-    background: #6c63ff;
-    border-radius: 50%;
-    animation: pulse 2s ease-in-out infinite;
-  }
-  @keyframes pulse {
-    0%,100% { opacity:1; transform:scale(1); }
-    50%      { opacity:0.4; transform:scale(0.7); }
-  }
+  .page-badge::before { content: ''; width: 7px; height: 7px; background: #6c63ff; border-radius: 50%; animation: pulse 2s ease-in-out infinite; }
+  @keyframes pulse { 0%,100% { opacity:1; transform:scale(1); } 50% { opacity:0.4; transform:scale(0.7); } }
   .page-title h1 {
-    font-size: clamp(2rem, 5vw, 3.2rem);
-    font-weight: 900;
-    letter-spacing: -0.03em;
+    font-size: clamp(2rem, 5vw, 3.2rem); font-weight: 900; letter-spacing: -0.03em;
     background: linear-gradient(135deg, #fff 0%, #a5b4fc 50%, #6c63ff 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    margin-bottom: 14px;
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; margin-bottom: 14px;
   }
-  .page-title p {
-    font-size: 1rem;
-    color: var(--muted);
-    max-width: 520px;
-    margin: 0 auto;
-    line-height: 1.7;
-  }
+  .page-title p { font-size: 1rem; color: var(--muted); max-width: 520px; margin: 0 auto; line-height: 1.7; }
 
-  /* ── Section ── */
   .section { margin-bottom: 48px; }
-  .section-label {
-    font-size: 11px;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: #6c63ff;
-    margin-bottom: 10px;
-  }
-  .section h2 {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: var(--text);
-    letter-spacing: -0.02em;
-    margin-bottom: 14px;
-  }
-  .section p {
-    font-size: 0.95rem;
-    color: var(--muted);
-    line-height: 1.8;
-    margin-bottom: 12px;
-  }
+  .section-label { font-size: 11px; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: #6c63ff; margin-bottom: 10px; }
+  .section h2 { font-size: 1.4rem; font-weight: 700; color: var(--text); letter-spacing: -0.02em; margin-bottom: 14px; }
+  .section p { font-size: 0.95rem; color: var(--muted); line-height: 1.8; margin-bottom: 12px; }
 
-  /* ── Card ── */
   .card {
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 16px;
-    padding: 28px;
-    position: relative;
-    overflow: hidden;
-    margin-bottom: 16px;
+    background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 28px; position: relative; overflow: hidden; margin-bottom: 16px;
   }
   .card::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0; right: 0;
-    height: 1px;
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 1px;
     background: linear-gradient(90deg, transparent, rgba(108,99,255,0.5), transparent);
   }
 
-  /* ── Pipeline steps ── */
-  .pipeline {
-    display: flex;
-    flex-direction: column;
-    gap: 0;
-  }
-  .pipe-step {
-    display: flex;
-    gap: 20px;
-    align-items: flex-start;
-    padding: 20px 0;
-    border-bottom: 1px solid var(--border);
-    position: relative;
-  }
+  .pipeline { display: flex; flex-direction: column; gap: 0; }
+  .pipe-step { display: flex; gap: 20px; align-items: flex-start; padding: 20px 0; border-bottom: 1px solid var(--border); }
   .pipe-step:last-child { border-bottom: none; }
   .pipe-num {
-    width: 36px;
-    height: 36px;
-    border-radius: 10px;
-    background: rgba(108,99,255,0.15);
-    border: 1px solid rgba(108,99,255,0.3);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-size: 13px;
-    font-weight: 700;
-    color: #a5b4fc;
-    flex-shrink: 0;
+    width: 36px; height: 36px; border-radius: 10px;
+    background: rgba(108,99,255,0.15); border: 1px solid rgba(108,99,255,0.3);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 13px; font-weight: 700; color: #a5b4fc; flex-shrink: 0;
   }
   .pipe-content { flex: 1; }
-  .pipe-title {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
-  .pipe-desc {
-    font-size: 13px;
-    color: var(--muted);
-    line-height: 1.7;
-  }
+  .pipe-title { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 5px; }
+  .pipe-desc { font-size: 13px; color: var(--muted); line-height: 1.7; }
   .pipe-code {
-    display: inline-block;
-    background: rgba(108,99,255,0.1);
-    border: 1px solid rgba(108,99,255,0.2);
-    border-radius: 6px;
-    padding: 2px 8px;
-    font-family: 'JetBrains Mono', monospace;
-    font-size: 11px;
-    color: #a5b4fc;
-    margin-top: 6px;
+    display: inline-block; background: rgba(108,99,255,0.1); border: 1px solid rgba(108,99,255,0.2);
+    border-radius: 6px; padding: 2px 8px; font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; color: #a5b4fc; margin-top: 6px;
   }
 
-  /* ── Model cards ── */
   .models-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 4px; }
-  .model-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 22px;
-    transition: border-color 0.2s;
-  }
+  .model-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 22px; transition: border-color 0.2s; }
   .model-card:hover { border-color: var(--border-h); }
-  .model-icon {
-    width: 40px; height: 40px;
-    border-radius: 10px;
-    display: flex; align-items: center; justify-content: center;
-    margin-bottom: 14px;
-    font-size: 18px;
-  }
+  .model-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; margin-bottom: 14px; font-size: 18px; }
   .icon-lr   { background: rgba(108,99,255,0.15); }
   .icon-lstm { background: rgba(6,182,212,0.15); }
   .model-name { font-size: 14px; font-weight: 700; color: var(--text); margin-bottom: 6px; }
   .model-type { font-size: 11px; color: var(--muted); margin-bottom: 12px; letter-spacing: 0.04em; text-transform: uppercase; }
-  .model-acc  {
-    font-size: 1.6rem;
-    font-weight: 900;
-    margin-bottom: 4px;
-  }
+  .model-acc { font-size: 1.6rem; font-weight: 900; margin-bottom: 4px; }
   .model-card:first-child .model-acc { color: #a5b4fc; }
   .model-card:last-child  .model-acc { color: #67e8f9; }
   .model-acc-lbl { font-size: 11px; color: var(--muted); }
   .model-points { margin-top: 14px; display: flex; flex-direction: column; gap: 6px; }
-  .model-point {
-    font-size: 12px;
-    color: var(--muted);
-    display: flex;
-    align-items: flex-start;
-    gap: 8px;
-    line-height: 1.5;
-  }
-  .model-point::before {
-    content: '';
-    width: 5px; height: 5px;
-    border-radius: 50%;
-    background: var(--muted);
-    flex-shrink: 0;
-    margin-top: 5px;
-  }
+  .model-point { font-size: 12px; color: var(--muted); display: flex; align-items: flex-start; gap: 8px; line-height: 1.5; }
+  .model-point::before { content: ''; width: 5px; height: 5px; border-radius: 50%; background: var(--muted); flex-shrink: 0; margin-top: 5px; }
 
-  /* ── Dataset cards ── */
   .datasets-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
-  .dataset-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 18px 20px;
-    transition: border-color 0.2s;
-    text-decoration: none;
-  }
+  .dataset-card { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; transition: border-color 0.2s; text-decoration: none; }
   .dataset-card:hover { border-color: rgba(108,99,255,0.4); }
   .ds-header { display: flex; align-items: center; gap: 10px; margin-bottom: 10px; }
   .ds-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
   .ds-name { font-size: 13px; font-weight: 600; color: var(--text); }
   .ds-rows { font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; margin-bottom: 8px; }
   .ds-desc { font-size: 12px; color: var(--muted); line-height: 1.6; }
-  .ds-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    font-size: 11px;
-    color: #a5b4fc;
-    margin-top: 10px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: color 0.2s;
-  }
+  .ds-link { display: inline-flex; align-items: center; gap: 5px; font-size: 11px; color: #a5b4fc; margin-top: 10px; text-decoration: none; font-weight: 500; transition: color 0.2s; }
   .ds-link:hover { color: #fff; }
 
-  /* ── Verdict logic ── */
   .verdict-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
-  .verdict-table th, .verdict-table td {
-    padding: 10px 14px;
-    font-size: 13px;
-    text-align: left;
-    border-bottom: 1px solid var(--border);
-  }
+  .verdict-table th, .verdict-table td { padding: 10px 14px; font-size: 13px; text-align: left; border-bottom: 1px solid var(--border); }
   .verdict-table th { color: var(--muted); font-weight: 600; font-size: 11px; text-transform: uppercase; letter-spacing: 0.06em; }
   .verdict-table td { color: var(--text); }
   .verdict-table tr:last-child td { border-bottom: none; }
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 600;
-    padding: 2px 8px;
-    border-radius: 20px;
-  }
-  .b-fake  { background: rgba(248,113,113,0.15); color: #fca5a5; }
-  .b-real  { background: rgba(74,222,128,0.15);  color: #86efac; }
-  .b-warn  { background: rgba(251,191,36,0.15);  color: #fde68a; }
+  .badge { display: inline-block; font-size: 11px; font-weight: 600; padding: 2px 8px; border-radius: 20px; }
+  .b-fake { background: rgba(248,113,113,0.15); color: #fca5a5; }
+  .b-real { background: rgba(74,222,128,0.15);  color: #86efac; }
+  .b-warn { background: rgba(251,191,36,0.15);  color: #fde68a; }
 
-  /* ── Stats bar ── */
-  .stats-row {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 12px;
-    margin-top: 4px;
-  }
-  .stat-box {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 16px;
-    text-align: center;
-  }
+  .stats-row { display: grid; grid-template-columns: repeat(4,1fr); gap: 12px; margin-top: 4px; }
+  .stat-box { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 16px; text-align: center; }
   .stat-val { font-size: 1.5rem; font-weight: 800; color: #fff; }
   .stat-lbl { font-size: 11px; color: var(--muted); margin-top: 3px; text-transform: uppercase; letter-spacing: 0.05em; }
 
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    margin-top: 64px;
-    font-size: 16px;
-    color: #545961;
-    line-height: 1.8;
+  /* ── LIME section ── */
+  .lime-demo {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 22px;
+    margin-top: 16px;
   }
+  .lime-demo-title {
+    font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 16px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .lime-demo-title::before { content: ''; width: 6px; height: 6px; border-radius: 50%; background: #6c63ff; flex-shrink: 0; }
+  .lime-example-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; margin-bottom: 14px; }
+  .lime-col-title { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .lime-col-title.fake { color: var(--accent-r); }
+  .lime-col-title.real { color: var(--accent-g); }
+  .lime-word-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .lime-word { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; min-width: 80px; color: var(--text); }
+  .lime-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden; }
+  .lime-bar-fill { height: 100%; border-radius: 100px; }
+  .lime-bar-fill.fake { background: linear-gradient(90deg, #ef4444, #f87171); }
+  .lime-bar-fill.real { background: linear-gradient(90deg, #10b981, #4ade80); }
+  .lime-weight { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--muted); min-width: 34px; text-align: right; }
+  .lime-note { font-size: 12px; color: var(--muted); line-height: 1.7; border-top: 0.5px solid var(--border); padding-top: 12px; margin-top: 4px; }
+
+  footer { text-align: center; margin-top: 64px; font-size: 16px; color: #545961; line-height: 1.8; }
 
   @media (max-width: 600px) {
     .models-row    { grid-template-columns: 1fr; }
     .datasets-grid { grid-template-columns: 1fr; }
     .stats-row     { grid-template-columns: repeat(2,1fr); }
+    .lime-example-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
@@ -397,7 +210,6 @@
 <div class="blob blob-1"></div>
 <div class="blob blob-2"></div>
 
-<!-- Navbar -->
 <nav class="navbar">
   <a href="/" class="nav-brand">Fake News Detection</a>
   <div class="nav-links">
@@ -408,7 +220,6 @@
 
 <div class="wrapper">
 
-  <!-- Page Title -->
   <div class="page-title">
     <div class="page-badge">How It Works</div>
     <h1>Fake News Detection</h1>
@@ -425,12 +236,11 @@
     </div>
   </div>
 
-  <!-- How Detection Works -->
+  <!-- Detection Pipeline -->
   <div class="section">
     <div class="section-label">Detection Pipeline</div>
     <h2>How Fake News is Detected</h2>
     <p>When you submit a news article, it passes through a 5-step pipeline before a verdict is returned.</p>
-
     <div class="card">
       <div class="pipeline">
         <div class="pipe-step">
@@ -468,10 +278,68 @@
         <div class="pipe-step">
           <div class="pipe-num">5</div>
           <div class="pipe-content">
-            <div class="pipe-title">Result Displayed</div>
-            <div class="pipe-desc">The verdict, confidence percentage, and individual model results are shown instantly in the browser — no page reload needed.</div>
+            <div class="pipe-title">LIME Word Influence Analysis</div>
+            <div class="pipe-desc">After the verdict, LIME (Local Interpretable Model-agnostic Explanations) analyses which specific words in your article pushed the model towards FAKE or REAL. Red bars show words that indicate fake news, green bars show words that indicate real news — giving you a clear reason behind every decision.</div>
+            <span class="pipe-code">verdict → LIME → top influencing words with weights</span>
           </div>
         </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- LIME Explanation -->
+  <div class="section">
+    <div class="section-label">Explainable AI</div>
+    <h2>Why LIME? — Understanding the Model's Decision</h2>
+    <p>A high accuracy score alone is not enough for a trustworthy AI system. The model must also be able to explain <em>why</em> it made a decision. This is called Explainable AI (XAI).</p>
+    <p>LIME — Local Interpretable Model-agnostic Explanations — works by creating hundreds of slightly modified versions of your input text and observing how the model's prediction changes. Words that cause the biggest change in prediction are the most influential.</p>
+
+    <div class="card">
+      <div class="pipeline">
+        <div class="pipe-step">
+          <div class="pipe-num" style="background:rgba(248,113,113,0.12);border-color:rgba(248,113,113,0.3);color:#fca5a5">1</div>
+          <div class="pipe-content">
+            <div class="pipe-title">LIME creates 500 text variations</div>
+            <div class="pipe-desc">It randomly removes words from your article to create 500 slightly different versions, then runs each through the model to see how the prediction changes.</div>
+          </div>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num" style="background:rgba(251,191,36,0.12);border-color:rgba(251,191,36,0.3);color:#fde68a">2</div>
+          <div class="pipe-content">
+            <div class="pipe-title">Measures each word's influence</div>
+            <div class="pipe-desc">Words whose removal causes the biggest drop in FAKE confidence are the strongest fake news indicators. Words whose removal causes a drop in REAL confidence are real news indicators.</div>
+          </div>
+        </div>
+        <div class="pipe-step">
+          <div class="pipe-num" style="background:rgba(74,222,128,0.12);border-color:rgba(74,222,128,0.3);color:#86efac">3</div>
+          <div class="pipe-content">
+            <div class="pipe-title">Top 5 words per side shown</div>
+            <div class="pipe-desc">The top 5 words pushing towards FAKE and top 5 pushing towards REAL are displayed with animated progress bars showing their relative influence strength.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- LIME visual example -->
+    <div class="lime-demo">
+      <div class="lime-demo-title">Example — "Trump secretly met with aliens, sources say" → FAKE (91%)</div>
+      <div class="lime-example-grid">
+        <div>
+          <div class="lime-col-title fake">Words indicating FAKE</div>
+          <div class="lime-word-row"><span class="lime-word">secretly</span><div class="lime-bar-track"><div class="lime-bar-fill fake" style="width:100%"></div></div><span class="lime-weight">18%</span></div>
+          <div class="lime-word-row"><span class="lime-word">aliens</span><div class="lime-bar-track"><div class="lime-bar-fill fake" style="width:83%"></div></div><span class="lime-weight">15%</span></div>
+          <div class="lime-word-row"><span class="lime-word">sources</span><div class="lime-bar-track"><div class="lime-bar-fill fake" style="width:67%"></div></div><span class="lime-weight">12%</span></div>
+          <div class="lime-word-row"><span class="lime-word">say</span><div class="lime-bar-track"><div class="lime-bar-fill fake" style="width:50%"></div></div><span class="lime-weight">9%</span></div>
+          <div class="lime-word-row"><span class="lime-word">met</span><div class="lime-bar-track"><div class="lime-bar-fill fake" style="width:33%"></div></div><span class="lime-weight">6%</span></div>
+        </div>
+        <div>
+          <div class="lime-col-title real">Words indicating REAL</div>
+          <div class="lime-word-row"><span class="lime-word">trump</span><div class="lime-bar-track"><div class="lime-bar-fill real" style="width:56%"></div></div><span class="lime-weight">8%</span></div>
+          <div class="lime-word-row"><span class="lime-word">confirmed</span><div class="lime-bar-track"><div class="lime-bar-fill real" style="width:39%"></div></div><span class="lime-weight">5%</span></div>
+        </div>
+      </div>
+      <div class="lime-note">
+        In this example, words like "secretly", "aliens" and "sources say" strongly indicate fake news — they appear far more often in fake articles in the training data. The longer the red bar, the stronger the fake signal from that word. This is shown on the home page after every analysis.
       </div>
     </div>
   </div>
@@ -483,38 +351,13 @@
     <div class="card">
       <table class="verdict-table">
         <thead>
-          <tr>
-            <th>LR Model</th>
-            <th>LSTM Model</th>
-            <th>Final Verdict</th>
-            <th>What it means</th>
-          </tr>
+          <tr><th>LR Model</th><th>LSTM Model</th><th>Final Verdict</th><th>What it means</th></tr>
         </thead>
         <tbody>
-          <tr>
-            <td><span class="badge b-fake">FAKE</span></td>
-            <td><span class="badge b-fake">FAKE</span></td>
-            <td><span class="badge b-fake">FAKE — High Confidence</span></td>
-            <td>Both models agree — strong signal</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-real">REAL</span></td>
-            <td><span class="badge b-real">REAL</span></td>
-            <td><span class="badge b-real">REAL — High Confidence</span></td>
-            <td>Both models agree — strong signal</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-fake">FAKE</span></td>
-            <td><span class="badge b-real">REAL</span></td>
-            <td><span class="badge b-warn">UNCERTAIN</span></td>
-            <td>Models disagree — verify manually</td>
-          </tr>
-          <tr>
-            <td><span class="badge b-real">REAL</span></td>
-            <td><span class="badge b-fake">FAKE</span></td>
-            <td><span class="badge b-warn">UNCERTAIN</span></td>
-            <td>Models disagree — verify manually</td>
-          </tr>
+          <tr><td><span class="badge b-fake">FAKE</span></td><td><span class="badge b-fake">FAKE</span></td><td><span class="badge b-fake">FAKE — High Confidence</span></td><td>Both models agree — strong signal</td></tr>
+          <tr><td><span class="badge b-real">REAL</span></td><td><span class="badge b-real">REAL</span></td><td><span class="badge b-real">REAL — High Confidence</span></td><td>Both models agree — strong signal</td></tr>
+          <tr><td><span class="badge b-fake">FAKE</span></td><td><span class="badge b-real">REAL</span></td><td><span class="badge b-warn">UNCERTAIN</span></td><td>Models disagree — verify manually</td></tr>
+          <tr><td><span class="badge b-real">REAL</span></td><td><span class="badge b-fake">FAKE</span></td><td><span class="badge b-warn">UNCERTAIN</span></td><td>Models disagree — verify manually</td></tr>
         </tbody>
       </table>
     </div>
@@ -536,7 +379,7 @@
           <div class="model-point">Converts text into 10,000 word-frequency numbers using TF-IDF</div>
           <div class="model-point">Learns which words and patterns are more common in fake vs real news</div>
           <div class="model-point">Fast prediction — results in milliseconds</div>
-          <div class="model-point">Works best with keyword-heavy fake news patterns</div>
+          <div class="model-point">LIME explanation is generated from this model</div>
         </div>
       </div>
       <div class="model-card">
@@ -555,19 +398,14 @@
     </div>
   </div>
 
-  <!-- Where Fake/Real News Comes From -->
+  <!-- Data Sources -->
   <div class="section">
     <div class="section-label">Data Sources</div>
     <h2>Where Fake &amp; Real News Data Comes From</h2>
     <p>Fake News Detection was trained on 5 datasets containing over 121,000 labeled news articles — each manually verified as fake or real by researchers.</p>
-
     <div class="datasets-grid">
-
       <div class="dataset-card">
-        <div class="ds-header">
-          <div class="ds-dot" style="background:#6c63ff"></div>
-          <div class="ds-name">Kaggle — Fake and Real News</div>
-        </div>
+        <div class="ds-header"><div class="ds-dot" style="background:#6c63ff"></div><div class="ds-name">Kaggle — Fake and Real News</div></div>
         <div class="ds-rows">44,898 articles</div>
         <div class="ds-desc">American political news from 2015–2018. Fake articles sourced from unreliable websites flagged by PolitiFact. Real articles sourced from Reuters.</div>
         <a class="ds-link" href="https://www.kaggle.com/datasets/clmentbisaillon/fake-and-real-news-dataset" target="_blank">
@@ -575,25 +413,17 @@
           View on Kaggle
         </a>
       </div>
-
       <div class="dataset-card">
-        <div class="ds-header">
-          <div class="ds-dot" style="background:#06b6d4"></div>
-          <div class="ds-name">ISOT Fake News Dataset</div>
-        </div>
+        <div class="ds-header"><div class="ds-dot" style="background:#06b6d4"></div><div class="ds-name">ISOT Fake News Dataset</div></div>
         <div class="ds-rows">45,386 articles</div>
-        <div class="ds-desc">Collected by University of Victoria. Real news from Reuters, fake news from websites flagged by fact-checking organisations. Covers politics, world news and more.</div>
+        <div class="ds-desc">Collected by University of Victoria. Real news from Reuters, fake news from websites flagged by fact-checking organisations.</div>
         <a class="ds-link" href="https://data.mendeley.com/datasets/945z9xkc8d/1" target="_blank">
           <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
           View on Mendeley
         </a>
       </div>
-
       <div class="dataset-card">
-        <div class="ds-header">
-          <div class="ds-dot" style="background:#4ade80"></div>
-          <div class="ds-name">Fake News Dataset (Kaggle)</div>
-        </div>
+        <div class="ds-header"><div class="ds-dot" style="background:#4ade80"></div><div class="ds-name">Fake News Dataset (Kaggle)</div></div>
         <div class="ds-rows">20,681 articles</div>
         <div class="ds-desc">From the UTK Machine Learning Club Kaggle competition. Contains news articles labeled as reliable or unreliable based on source credibility analysis.</div>
         <a class="ds-link" href="https://data.mendeley.com/datasets/945z9xkc8d/1" target="_blank">
@@ -601,12 +431,8 @@
           View on Mendeley
         </a>
       </div>
-
       <div class="dataset-card">
-        <div class="ds-header">
-          <div class="ds-dot" style="background:#f87171"></div>
-          <div class="ds-name">Fake or Real News Dataset</div>
-        </div>
+        <div class="ds-header"><div class="ds-dot" style="background:#f87171"></div><div class="ds-name">Fake or Real News Dataset</div></div>
         <div class="ds-rows">6,332 articles</div>
         <div class="ds-desc">Curated by George McIntire. Contains hand-verified fake and real news articles focused on US political topics, widely used in NLP research benchmarks.</div>
         <a class="ds-link" href="https://data.mendeley.com/datasets/945z9xkc8d/1" target="_blank">
@@ -614,7 +440,6 @@
           View on Mendeley
         </a>
       </div>
-
     </div>
   </div>
 
@@ -649,7 +474,7 @@
           <div class="pipe-num" style="background:rgba(74,222,128,0.12);border-color:rgba(74,222,128,0.3);color:#86efac">✓</div>
           <div class="pipe-content">
             <div class="pipe-title">Topic and Word Patterns</div>
-            <div class="pipe-desc">Certain topics, names, and word combinations appear disproportionately in fake news. TF-IDF quantifies these patterns across 10,000 vocabulary words, giving the model a statistical fingerprint for fake vs real.</div>
+            <div class="pipe-desc">Certain topics, names, and word combinations appear disproportionately in fake news. TF-IDF quantifies these patterns across 10,000 vocabulary words, giving the model a statistical fingerprint for fake vs real. LIME then reveals exactly which of these words influenced each individual prediction.</div>
           </div>
         </div>
       </div>

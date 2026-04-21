@@ -36,12 +36,11 @@
     overflow-x: hidden;
   }
 
-  /* ── Background image ── */
   body::before {
     content: '';
     position: fixed;
     inset: 0;
-   background-image: url('/image/Background.png');
+    background-image: url('/image/Background.png');
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -53,12 +52,11 @@
     content: '';
     position: fixed;
     inset: 0;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0.75) 100%);
+    background: linear-gradient(135deg, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.75) 100%);
     pointer-events: none;
     z-index: 0;
   }
 
-  /* ── Radial glow blobs ── */
   .blob {
     position: fixed;
     border-radius: 50%;
@@ -77,9 +75,6 @@
     100% { transform: translate(40px, 30px) scale(1.08); }
   }
 
-  /* ── Layout ── */
-
-  /* ── Navbar ── */
   .navbar {
     position: fixed;
     top: 0; left: 0; right: 0;
@@ -125,7 +120,6 @@
     padding: 100px 24px 100px;
   }
 
-  /* ── Header ── */
   header { text-align: center; margin-bottom: 56px; }
 
   .logo-badge {
@@ -175,7 +169,6 @@
     line-height: 1.7;
   }
 
-  /* ── Stats bar ── */
   .stats-bar {
     display: flex;
     justify-content: center;
@@ -183,22 +176,11 @@
     margin: 32px 0 0;
     flex-wrap: wrap;
   }
-  .stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2px;
-  }
-  .stat-val {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #fff;
-  }
+  .stat { display: flex; flex-direction: column; align-items: center; gap: 2px; }
+  .stat-val { font-size: 1.4rem; font-weight: 700; color: #fff; }
   .stat-lbl { font-size: 11px; color: var(--muted); letter-spacing: 0.06em; text-transform: uppercase; }
-
   .stat-divider { width: 1px; background: var(--border); align-self: stretch; }
 
-  /* ── Main card ── */
   .main-card {
     background: var(--card);
     border: 1px solid var(--border);
@@ -207,7 +189,6 @@
     position: relative;
     overflow: hidden;
   }
-
   .main-card::before {
     content: '';
     position: absolute;
@@ -256,7 +237,6 @@
   }
   .char-count { font-size: 12px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
 
-  /* ── Analyze button ── */
   .btn-analyze {
     width: 100%;
     background: linear-gradient(135deg, #6c63ff, #8b5cf6);
@@ -287,8 +267,6 @@
   .btn-analyze:disabled { opacity: 0.5; cursor: not-allowed; transform: none; box-shadow: none; }
 
   .btn-inner { display: flex; align-items: center; justify-content: center; gap: 10px; }
-
-  /* ── Button row ── */
   .btn-row { display: flex; gap: 12px; margin-bottom: 0; }
   .btn-analyze { flex: 1; }
 
@@ -311,7 +289,6 @@
   }
   .btn-import:hover { border-color: rgba(108,99,255,0.5); color: #a5b4fc; background: rgba(108,99,255,0.06); }
 
-  /* ── File info bar ── */
   .file-info {
     display: none;
     align-items: center;
@@ -326,14 +303,9 @@
   }
   .file-info-name { flex: 1; font-weight: 500; }
   .file-info-size { color: var(--muted); font-family: 'JetBrains Mono', monospace; font-size: 11px; }
-  .file-clear {
-    background: none; border: none; color: var(--muted);
-    cursor: pointer; font-size: 16px; padding: 0 4px;
-    line-height: 1; transition: color 0.2s;
-  }
+  .file-clear { background: none; border: none; color: var(--muted); cursor: pointer; font-size: 16px; padding: 0 4px; line-height: 1; transition: color 0.2s; }
   .file-clear:hover { color: #f87171; }
 
-  /* ── Loading spinner ── */
   .spinner {
     width: 18px; height: 18px;
     border: 2px solid rgba(255,255,255,0.3);
@@ -344,10 +316,8 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
 
-  /* ── Results section ── */
   #results { margin-top: 32px; display: none; }
 
-  /* Verdict banner */
   .verdict {
     border-radius: 16px;
     padding: 28px 32px;
@@ -359,175 +329,110 @@
     overflow: hidden;
     animation: fadeSlideUp 0.5s ease both;
   }
-  .verdict.real { background: rgba(74,222,128,0.08); border: 1px solid rgba(74,222,128,0.25); }
-  .verdict.fake { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); }
-  .verdict.uncertain { background: rgba(251,191,36,0.08); border: 1px solid rgba(251,191,36,0.25); }
+  .verdict.real     { background: rgba(74,222,128,0.08);  border: 1px solid rgba(74,222,128,0.25); }
+  .verdict.fake     { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); }
+  .verdict.uncertain{ background: rgba(251,191,36,0.08);  border: 1px solid rgba(251,191,36,0.25); }
 
   @keyframes fadeSlideUp {
     from { opacity: 0; transform: translateY(16px); }
     to   { opacity: 1; transform: translateY(0); }
   }
 
-  .verdict-icon {
-    width: 56px; height: 56px;
-    border-radius: 14px;
-    display: flex; align-items: center; justify-content: center;
-    font-size: 1.8rem;
-    flex-shrink: 0;
-  }
-  .verdict.real .verdict-icon   { background: rgba(74,222,128,0.15); }
-  .verdict.fake .verdict-icon   { background: rgba(248,113,113,0.15); }
+  .verdict-icon { width: 56px; height: 56px; border-radius: 14px; display: flex; align-items: center; justify-content: center; font-size: 1.8rem; flex-shrink: 0; }
+  .verdict.real .verdict-icon      { background: rgba(74,222,128,0.15); }
+  .verdict.fake .verdict-icon      { background: rgba(248,113,113,0.15); }
   .verdict.uncertain .verdict-icon { background: rgba(251,191,36,0.15); }
 
   .verdict-text { flex: 1; }
-  .verdict-label {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
+  .verdict-label { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; margin-bottom: 4px; }
   .verdict.real .verdict-label      { color: var(--accent-g); }
   .verdict.fake .verdict-label      { color: var(--accent-r); }
   .verdict.uncertain .verdict-label { color: var(--accent-y); }
 
   .verdict-title { font-size: 1.6rem; font-weight: 800; color: #fff; letter-spacing: -0.02em; }
   .verdict-sub   { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-
-  .verdict-conf {
-    text-align: right;
-    flex-shrink: 0;
-  }
+  .verdict-conf  { text-align: right; flex-shrink: 0; }
   .conf-val  { font-size: 2.4rem; font-weight: 900; line-height: 1; }
   .conf-lbl  { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; }
   .verdict.real .conf-val      { color: var(--accent-g); }
   .verdict.fake .conf-val      { color: var(--accent-r); }
   .verdict.uncertain .conf-val { color: var(--accent-y); }
 
-  /* ── Model comparison grid ── */
-  .models-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 16px;
-    margin-bottom: 24px;
-    animation: fadeSlideUp 0.5s ease 0.1s both;
-  }
+  .models-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 24px; animation: fadeSlideUp 0.5s ease 0.1s both; }
+  .model-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 20px; transition: border-color 0.2s; }
+  .model-card:hover { border-color: var(--border-h); }
+  .model-header { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; }
+  .model-dot { width: 8px; height: 8px; border-radius: 50%; background: var(--accent); flex-shrink: 0; }
+  .model-name { font-size: 13px; font-weight: 600; color: var(--text); }
+  .model-type { font-size: 11px; color: var(--muted); }
+  .model-result { font-size: 1.1rem; font-weight: 700; margin-bottom: 10px; }
+  .model-result.real { color: var(--accent-g); }
+  .model-result.fake { color: var(--accent-r); }
+  .progress-track { background: rgba(255,255,255,0.06); border-radius: 100px; height: 6px; overflow: hidden; margin-bottom: 6px; }
+  .progress-fill { height: 100%; border-radius: 100px; transition: width 1s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+  .progress-fill.real { background: linear-gradient(90deg, #10b981, #4ade80); }
+  .progress-fill.fake { background: linear-gradient(90deg, #ef4444, #f87171); }
+  .progress-label { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); font-family: 'JetBrains Mono', monospace; }
 
-  .model-card {
+  .agreement-badge { background: var(--surface); border: 1px solid var(--border); border-radius: 12px; padding: 14px 20px; display: flex; align-items: center; gap: 12px; font-size: 13px; color: var(--muted); animation: fadeSlideUp 0.5s ease 0.2s both; }
+  .agree-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; }
+  .agree-dot.yes { background: var(--accent-g); box-shadow: 0 0 8px var(--accent-g); }
+  .agree-dot.no  { background: var(--accent-y); box-shadow: 0 0 8px var(--accent-y); }
+
+  /* ── LIME Explanation ── */
+  .lime-section {
+    margin-top: 20px;
     background: var(--surface);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 20px;
-    transition: border-color 0.2s;
+    animation: fadeSlideUp 0.5s ease 0.3s both;
   }
-  .model-card:hover { border-color: var(--border-h); }
-
-  .model-header {
-    display: flex; align-items: center; gap: 10px;
-    margin-bottom: 16px;
-  }
-  .model-dot {
-    width: 8px; height: 8px;
-    border-radius: 50%;
-    background: var(--accent);
-    flex-shrink: 0;
-  }
-  .model-name { font-size: 13px; font-weight: 600; color: var(--text); }
-  .model-type { font-size: 11px; color: var(--muted); }
-
-  .model-result {
-    font-size: 1.1rem;
-    font-weight: 700;
-    margin-bottom: 10px;
-  }
-  .model-result.real { color: var(--accent-g); }
-  .model-result.fake { color: var(--accent-r); }
-
-  .progress-track {
-    background: rgba(255,255,255,0.06);
-    border-radius: 100px;
-    height: 6px;
-    overflow: hidden;
-    margin-bottom: 6px;
-  }
-  .progress-fill {
-    height: 100%;
-    border-radius: 100px;
-    transition: width 1s cubic-bezier(0.4,0,0.2,1);
-    width: 0%;
-  }
-  .progress-fill.real { background: linear-gradient(90deg, #10b981, #4ade80); }
-  .progress-fill.fake { background: linear-gradient(90deg, #ef4444, #f87171); }
-
-  .progress-label {
-    display: flex;
-    justify-content: space-between;
-    font-size: 11px;
+  .lime-title {
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
     color: var(--muted);
-    font-family: 'JetBrains Mono', monospace;
-  }
-
-  /* ── Agreement badge ── */
-  .agreement-badge {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 12px;
-    padding: 14px 20px;
+    margin-bottom: 14px;
     display: flex;
     align-items: center;
-    gap: 12px;
-    font-size: 13px;
-    color: var(--muted);
-    animation: fadeSlideUp 0.5s ease 0.2s both;
+    gap: 8px;
   }
-  .agree-dot {
-    width: 8px; height: 8px;
+  .lime-title::before {
+    content: '';
+    width: 6px; height: 6px;
     border-radius: 50%;
+    background: #6c63ff;
     flex-shrink: 0;
   }
-  .agree-dot.yes { background: var(--accent-g); box-shadow: 0 0 8px var(--accent-g); }
-  .agree-dot.no  { background: var(--accent-y); box-shadow: 0 0 8px var(--accent-y); }
+  .lime-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .lime-col-title { font-size: 11px; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+  .lime-col-title.fake { color: var(--accent-r); }
+  .lime-col-title.real { color: var(--accent-g); }
+  .lime-word-row { display: flex; align-items: center; gap: 8px; margin-bottom: 7px; }
+  .lime-word { font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 500; min-width: 80px; color: var(--text); }
+  .lime-bar-track { flex: 1; height: 5px; background: rgba(255,255,255,0.06); border-radius: 100px; overflow: hidden; }
+  .lime-bar-fill { height: 100%; border-radius: 100px; transition: width 0.8s cubic-bezier(0.4,0,0.2,1); width: 0%; }
+  .lime-bar-fill.fake { background: linear-gradient(90deg, #ef4444, #f87171); }
+  .lime-bar-fill.real { background: linear-gradient(90deg, #10b981, #4ade80); }
+  .lime-weight { font-size: 11px; font-family: 'JetBrains Mono', monospace; color: var(--muted); min-width: 34px; text-align: right; }
+  .lime-empty { font-size: 12px; color: var(--muted); font-style: italic; }
+  .lime-note { font-size: 11px; color: var(--muted); margin-top: 12px; line-height: 1.6; border-top: 0.5px solid var(--border); padding-top: 10px; }
 
-  /* ── Error ── */
-  .error-box {
-    background: rgba(248,113,113,0.08);
-    border: 1px solid rgba(248,113,113,0.25);
-    border-radius: 12px;
-    padding: 14px 18px;
-    font-size: 13px;
-    color: #fca5a5;
-    display: none;
-    margin-top: 16px;
-  }
+  .error-box { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.25); border-radius: 12px; padding: 14px 18px; font-size: 13px; color: #fca5a5; display: none; margin-top: 16px; }
 
-  /* ── Sample pills ── */
   .samples-section { margin-top: 28px; }
   .samples-label { font-size: 12px; color: var(--muted); text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 10px; }
   .pills { display: flex; flex-wrap: wrap; gap: 8px; }
-  .pill {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 100px;
-    padding: 6px 14px;
-    font-size: 12px;
-    color: var(--muted);
-    cursor: pointer;
-    transition: border-color 0.2s, color 0.2s;
-    white-space: nowrap;
-  }
+  .pill { background: var(--surface); border: 1px solid var(--border); border-radius: 100px; padding: 6px 14px; font-size: 12px; color: var(--muted); cursor: pointer; transition: border-color 0.2s, color 0.2s; white-space: nowrap; }
   .pill:hover { border-color: rgba(108,99,255,0.4); color: #a5b4fc; }
 
-  /* ── Footer ── */
-  footer {
-    text-align: center;
-    margin-top: 64px;
-    font-size: 16px;
-    color: #545961;
-    line-height: 1.8;
-  }
+  footer { text-align: center; margin-top: 64px; font-size: 16px; color: #545961; line-height: 1.8; }
 
   @media (max-width: 560px) {
     .models-grid { grid-template-columns: 1fr; }
+    .lime-grid    { grid-template-columns: 1fr; }
     .verdict { flex-wrap: wrap; }
     .verdict-conf { width: 100%; text-align: left; }
     .stats-bar { gap: 20px; }
@@ -551,8 +456,6 @@
 <div class="blob blob-3"></div>
 
 <div class="wrapper">
-
-  <!-- Header -->
   <header>
     <div class="logo-badge">AI-Powered Analysis</div>
     <h1>Fake News Detection</h1>
@@ -568,7 +471,6 @@
     </div>
   </header>
 
-  <!-- Main card -->
   <div class="main-card">
     <label class="input-label" for="newsInput">Paste news article or headline</label>
     <textarea id="newsInput" placeholder="Paste a news headline or article text here to analyze whether it is real or fake..."></textarea>
@@ -608,7 +510,6 @@
     <!-- Results -->
     <div id="results">
 
-      <!-- Verdict banner -->
       <div class="verdict" id="verdictBanner">
         <div class="verdict-icon" id="verdictIcon"></div>
         <div class="verdict-text">
@@ -622,7 +523,6 @@
         </div>
       </div>
 
-      <!-- Model cards -->
       <div class="models-grid">
         <div class="model-card" id="lrCard">
           <div class="model-header">
@@ -633,13 +533,8 @@
             </div>
           </div>
           <div class="model-result" id="lrResult"></div>
-          <div class="progress-track">
-            <div class="progress-fill" id="lrBar"></div>
-          </div>
-          <div class="progress-label">
-            <span id="lrLabel">Confidence</span>
-            <span id="lrConf"></span>
-          </div>
+          <div class="progress-track"><div class="progress-fill" id="lrBar"></div></div>
+          <div class="progress-label"><span id="lrLabel">Confidence</span><span id="lrConf"></span></div>
         </div>
 
         <div class="model-card" id="lstmCard">
@@ -651,25 +546,36 @@
             </div>
           </div>
           <div class="model-result" id="lstmResult"></div>
-          <div class="progress-track">
-            <div class="progress-fill" id="lstmBar"></div>
-          </div>
-          <div class="progress-label">
-            <span id="lstmLabel">Confidence</span>
-            <span id="lstmConf"></span>
-          </div>
+          <div class="progress-track"><div class="progress-fill" id="lstmBar"></div></div>
+          <div class="progress-label"><span id="lstmLabel">Confidence</span><span id="lstmConf"></span></div>
         </div>
       </div>
 
-      <!-- Agreement badge -->
       <div class="agreement-badge" id="agreeBadge">
         <div class="agree-dot" id="agreeDot"></div>
         <span id="agreeText"></span>
       </div>
 
+      <!-- LIME Explanation -->
+      <div class="lime-section" id="limeSection" style="display:none">
+        <div class="lime-title">Why did the model decide this? — Word Influence Analysis (LIME)</div>
+        <div class="lime-grid">
+          <div>
+            <div class="lime-col-title fake">Words indicating FAKE</div>
+            <div id="fakeWords"></div>
+          </div>
+          <div>
+            <div class="lime-col-title real">Words indicating REAL</div>
+            <div id="realWords"></div>
+          </div>
+        </div>
+        <div class="lime-note">
+          These words had the highest influence on the model decision. Red bars = pushed towards FAKE. Green bars = pushed towards REAL. Longer bar = stronger influence.
+        </div>
+      </div>
+
     </div>
 
-    <!-- Sample pills -->
     <div class="samples-section">
       <div class="samples-label">Try a sample</div>
       <div class="pills">
@@ -718,6 +624,7 @@
 
     errB.style.display = 'none';
     res.style.display  = 'none';
+    document.getElementById('limeSection').style.display = 'none';
 
     if (text.length < 20) {
       errB.textContent   = 'Please enter at least 20 characters of news text.';
@@ -736,9 +643,7 @@
         body:    JSON.stringify({ text })
       });
       const data = await resp.json();
-
       if (data.error) { throw new Error(data.error); }
-
       renderResults(data);
     } catch (e) {
       errB.textContent   = e.message || 'Something went wrong. Please try again.';
@@ -752,63 +657,95 @@
 
   function renderResults(data) {
     const { lr, lstm, final } = data;
-    const res = document.getElementById('results');
 
-    // Verdict
     const banner = document.getElementById('verdictBanner');
     banner.className = 'verdict ' + (final.agree ? final.label.toLowerCase() : 'uncertain');
 
-    const icons = { REAL: '✓', FAKE: '✗', uncertain: '?' };
     document.getElementById('verdictIcon').textContent  = final.agree ? (final.label === 'REAL' ? '✓' : '✗') : '~';
     document.getElementById('verdictLabel').textContent = final.agree ? 'Verdict' : 'Models Disagree';
-    document.getElementById('verdictTitle').textContent =
-      final.agree ? (final.label === 'REAL' ? 'Likely Real News' : 'Likely Fake News') : 'Uncertain Result';
-    document.getElementById('verdictSub').textContent =
-      final.agree
-        ? 'Both AI models reached the same conclusion.'
-        : 'The two models returned different results — verify manually.';
+    document.getElementById('verdictTitle').textContent = final.agree ? (final.label === 'REAL' ? 'Likely Real News' : 'Likely Fake News') : 'Uncertain Result';
+    document.getElementById('verdictSub').textContent   = final.agree ? 'Both AI models reached the same conclusion.' : 'The two models returned different results — verify manually.';
     document.getElementById('confVal').textContent = final.confidence + '%';
 
-    // LR card
     const lrCls = lr.label.toLowerCase();
     document.getElementById('lrResult').textContent  = lr.label === 'REAL' ? 'Real News' : 'Fake News';
     document.getElementById('lrResult').className    = 'model-result ' + lrCls;
     document.getElementById('lrBar').className       = 'progress-fill ' + lrCls;
     document.getElementById('lrConf').textContent    = lr.confidence + '%';
 
-    // LSTM card
     const lstmCls = lstm.label.toLowerCase();
     document.getElementById('lstmResult').textContent = lstm.label === 'REAL' ? 'Real News' : 'Fake News';
     document.getElementById('lstmResult').className   = 'model-result ' + lstmCls;
     document.getElementById('lstmBar').className      = 'progress-fill ' + lstmCls;
     document.getElementById('lstmConf').textContent   = lstm.confidence + '%';
 
-    res.style.display = 'block';
+    document.getElementById('results').style.display = 'block';
 
-    // Animate progress bars after display
     setTimeout(() => {
       document.getElementById('lrBar').style.width   = lr.confidence + '%';
       document.getElementById('lstmBar').style.width = lstm.confidence + '%';
     }, 50);
 
-    // Agreement
-    const dot  = document.getElementById('agreeDot');
+    const dot = document.getElementById('agreeDot');
     const agTx = document.getElementById('agreeText');
     if (final.agree) {
-      dot.className  = 'agree-dot yes';
+      dot.className    = 'agree-dot yes';
       agTx.textContent = 'Both models agree — LR: ' + lr.label + ' (' + lr.confidence + '%) · LSTM: ' + lstm.label + ' (' + lstm.confidence + '%)';
     } else {
-      dot.className  = 'agree-dot no';
+      dot.className    = 'agree-dot no';
       agTx.textContent = 'Models disagree — LR: ' + lr.label + ' (' + lr.confidence + '%) · LSTM: ' + lstm.label + ' (' + lstm.confidence + '%)';
     }
+
+    if (data.explanation) { renderLime(data.explanation); }
   }
 
-  // Enter key shortcut
+  function renderLime(exp) {
+    const section = document.getElementById('limeSection');
+    const fakeEl  = document.getElementById('fakeWords');
+    const realEl  = document.getElementById('realWords');
+
+    fakeEl.innerHTML = '';
+    realEl.innerHTML = '';
+
+    const maxW = Math.max(
+      ...(exp.fake_words || []).map(w => w.weight),
+      ...(exp.real_words || []).map(w => w.weight),
+      1
+    );
+
+    function buildRows(words, cls, container) {
+      if (!words || words.length === 0) {
+        container.innerHTML = '<div class="lime-empty">No significant words found</div>';
+        return;
+      }
+      words.forEach(item => {
+        const pct = Math.round((item.weight / maxW) * 100);
+        const row = document.createElement('div');
+        row.className = 'lime-word-row';
+        row.innerHTML =
+          '<span class="lime-word">' + item.word + '</span>' +
+          '<div class="lime-bar-track"><div class="lime-bar-fill ' + cls + '" data-pct="' + pct + '" style="width:0%"></div></div>' +
+          '<span class="lime-weight">' + item.weight + '%</span>';
+        container.appendChild(row);
+      });
+    }
+
+    buildRows(exp.fake_words, 'fake', fakeEl);
+    buildRows(exp.real_words, 'real', realEl);
+
+    section.style.display = 'block';
+
+    setTimeout(() => {
+      document.querySelectorAll('.lime-bar-fill').forEach(bar => {
+        bar.style.width = bar.dataset.pct + '%';
+      });
+    }, 100);
+  }
+
   document.getElementById('newsInput').addEventListener('keydown', e => {
     if (e.ctrlKey && e.key === 'Enter') analyze();
   });
 
-  // ── File import handler ──────────────────────────────────────────────────
   async function handleFileImport(input) {
     const file = input.files[0];
     if (!file) return;
@@ -823,57 +760,39 @@
 
     try {
       let text = '';
-
       if (ext === 'txt') {
-        // Plain text — read directly
         text = await file.text();
-
       } else if (ext === 'pdf') {
-        // PDF — use pdf.js to extract text
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
-        pdfjsLib.GlobalWorkerOptions.workerSrc =
-          'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
-
+        pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js';
         const arrayBuffer = await file.arrayBuffer();
-        const pdf         = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
-        let fullText      = '';
-
+        const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+        let fullText = '';
         for (let i = 1; i <= pdf.numPages; i++) {
           const page    = await pdf.getPage(i);
           const content = await page.getTextContent();
           fullText += content.items.map(item => item.str).join(' ') + ' ';
         }
         text = fullText.trim();
-
       } else if (ext === 'docx' || ext === 'doc') {
-        // DOCX — use mammoth.js
-        const mammoth     = window.mammoth;
+        const mammoth = window.mammoth;
         const arrayBuffer = await file.arrayBuffer();
-        const result      = await mammoth.extractRawText({ arrayBuffer });
+        const result = await mammoth.extractRawText({ arrayBuffer });
         text = result.value.trim();
-
       } else {
         showError('Unsupported file type. Please use .txt, .pdf, or .docx');
         return;
       }
-
       if (!text || text.length < 20) {
         showError('File appears to be empty or too short to analyze.');
         return;
       }
-
-      // Put extracted text into textarea
-      textarea.value = text.slice(0, 5000); // cap at 5000 chars
+      textarea.value = text.slice(0, 5000);
       textarea.dispatchEvent(new Event('input'));
-
-      // Auto scroll to textarea
       textarea.scrollIntoView({ behavior: 'smooth', block: 'center' });
-
     } catch (err) {
       showError('Could not read file: ' + err.message);
     }
-
-    // Reset input so same file can be re-imported
     input.value = '';
   }
 
@@ -883,6 +802,7 @@
     textarea.value = '';
     textarea.dispatchEvent(new Event('input'));
     document.getElementById('results').style.display = 'none';
+    document.getElementById('limeSection').style.display = 'none';
   }
 
   function showError(msg) {
